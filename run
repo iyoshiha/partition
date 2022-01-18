@@ -1,4 +1,4 @@
 #! /bin/zsh
 
-gcc partition.c -o .run -I ~/include && ./.run
-
+gcc partition.c -o .run -I ~/include 
+./.run `cat`
