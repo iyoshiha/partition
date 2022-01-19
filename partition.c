@@ -19,15 +19,15 @@ void	swap_ary_elem(int *a_ptr, int *b_ptr)
 	*b_ptr = tmp;
 }
 
-int	partition(int *ary, size_t p, size_t r)
+int	partition(int *ary, size_t start, size_t pivot_i)
 {
 	t_partition index;
 	int			pivot;
 
-	index.i = (int)p - 1;
-	index.j = p;
-	pivot = ary[r];
-	while (index.j <= r)
+	index.i = (int)start - 1;
+	index.j = start;
+	pivot = ary[pivot_i];
+	while (index.j <= pivot_i)
 	{
 		if (ary[index.j] <= pivot)
 		{
@@ -50,7 +50,7 @@ int	main(int c, char **v)
 	{
 		ary[i] = atoi(v[i]);
 	}
-	border = partition(ary, 0, c - 1);
+	border = partition(ary, 0, c -1);
 	for (int i = 0; i < border; i++)
 	{
 		printf("%d", ary[i]);
